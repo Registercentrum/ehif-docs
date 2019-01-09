@@ -1,0 +1,42 @@
+FORMAT: 1A
+HOST: http://ehif.gitsvg.se/
+
+# EHiF
+
+API för EHiF &mdash; Elevens Hälsa i Fokus.
+
+Alla anrop kräver tvåfaktorautentisering om inte api-nyckel finns med i exempelanropet.
+
+## Triggerprotokoll [/api/trigger]
+
+### Informera om sparad elevhälsoenkät [POST]
+
+Skickas från ett externt system för att informera om att en elevhälsoenkät sparats i systemet. 
+
++ Request (application/json)
+
+        {
+            "subjectKey": "19620831-5116",
+            "systemID": "SE12345678901234-5678",
+            "careUnitID": "SE98765432109890-6543",
+            "schoolUnitID": "74174879",
+            "formVersion": "1.3",
+            "contractVersion": "1.0"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 0
+        }
+
+
+## Autentisering [/api/authenticate]
+
+### Hämta autentiserad session [GET]
+
++ Response 200 (application/json)
+
+        {
+            "code": 0
+        }
